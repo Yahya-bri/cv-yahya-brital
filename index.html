@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yahya Brital — Ingénieur IA & Data Science · Industrie 4.0</title>
+<meta name="description" content="CV de Yahya Brital, Ingénieur Data Science & IA spécialisé dans l'Industrie 4.0 — MLOps, GenAI, Big Data temps réel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0a0f1e;
+    --bg-soft: #0f1629;
+    --card: #121b31;
+    --card-hover: #16213c;
+    --border: rgba(148, 163, 184, .14);
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --accent: #22d3ee;
+    --accent-2: #818cf8;
+    --accent-3: #c084fc;
+    --grad: linear-gradient(120deg, #22d3ee, #818cf8 55%, #c084fc);
+    --radius: 16px;
+    --font-head: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  ::selection{ background: rgba(34,211,238,.3); }
+
+  .container{ max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  a{ color: var(--accent); text-decoration: none; }
+  a:hover{ text-decoration: underline; }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position: sticky; top:0; z-index:50;
+    backdrop-filter: blur(14px);
+    background: rgba(10,15,30,.75);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 14px 24px; max-width:1080px; margin:0 auto;
+  }
+  .nav-brand{
+    font-family: var(--font-head); font-weight:700; font-size:1.05rem;
+    color: var(--text); display:flex; align-items:center; gap:10px;
+  }
+  .nav-brand:hover{ text-decoration:none; }
+  .nav-brand .dot{
+    width:10px; height:10px; border-radius:50%;
+    background: var(--grad); box-shadow: 0 0 12px var(--accent);
+  }
+  .nav-links{ display:flex; gap:22px; align-items:center; }
+  .nav-links a{ color: var(--muted); font-size:.9rem; font-weight:500; }
+  .nav-links a:hover{ color: var(--text); text-decoration:none; }
+  .btn-print{
+    font-family: var(--font-body); font-size:.85rem; font-weight:600;
+    color:#0a0f1e; background: var(--grad); border:none; cursor:pointer;
+    padding: 8px 16px; border-radius: 99px;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .btn-print:hover{ transform: translateY(-1px); box-shadow: 0 6px 20px rgba(129,140,248,.35); }
+  @media (max-width: 820px){ .nav-links a{ display:none; } }
+
+  /* ---------- HERO ---------- */
+  .hero{ position:relative; padding: 90px 0 70px; overflow:hidden; }
+  .hero::before{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background:
+      radial-gradient(600px 300px at 15% 0%, rgba(34,211,238,.12), transparent 60%),
+      radial-gradient(700px 350px at 90% 20%, rgba(192,132,252,.12), transparent 60%);
+  }
+  .hero::after{
+    content:""; position:absolute; inset:0; pointer-events:none; opacity:.5;
+    background-image:
+      linear-gradient(rgba(148,163,184,.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148,163,184,.05) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(ellipse at 50% 0%, black 30%, transparent 75%);
+  }
+  .hero-content{ position:relative; z-index:1; }
+  .badge{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family: var(--font-mono); font-size:.78rem; color: var(--accent);
+    border:1px solid rgba(34,211,238,.35); border-radius:99px;
+    padding: 6px 14px; background: rgba(34,211,238,.06);
+  }
+  .badge .pulse{
+    width:8px; height:8px; border-radius:50%; background:#34d399;
+    box-shadow:0 0 0 0 rgba(52,211,153,.6); animation: pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%{ box-shadow:0 0 0 0 rgba(52,211,153,.5); }
+    70%{ box-shadow:0 0 0 8px rgba(52,211,153,0); }
+    100%{ box-shadow:0 0 0 0 rgba(52,211,153,0); }
+  }
+  h1{
+    font-family: var(--font-head); font-weight:700;
+    font-size: clamp(2.6rem, 6vw, 4rem);
+    line-height:1.08; margin: 22px 0 10px; letter-spacing:-.02em;
+  }
+  h1 .grad{
+    background: var(--grad);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .role-line{
+    font-family: var(--font-head); font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+    color: var(--muted); font-weight:500; margin-bottom: 24px;
+  }
+  .role-line strong{ color: var(--text); }
+  .summary{ max-width: 780px; color: var(--muted); font-size:1.02rem; }
+  .summary strong{ color: var(--text); font-weight:600; }
+
+  .contact-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 28px; }
+  .contact-chip{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:.85rem; color: var(--text);
+    border:1px solid var(--border); border-radius:99px;
+    padding: 8px 16px; background: rgba(18,27,49,.7);
+    transition: border-color .2s, transform .2s;
+  }
+  .contact-chip:hover{ border-color: var(--accent); text-decoration:none; transform: translateY(-2px); }
+  .contact-chip svg{ width:15px; height:15px; stroke: var(--accent); }
+  #view-chip{ display:none; } /* hidden until count loads */
+  #view-chip.loaded{ display:inline-flex; }
+  #view-count{ font-family: var(--font-mono); color: var(--accent); font-weight:600; }
+
+  .marquee-tags{ margin-top: 34px; display:flex; flex-wrap:wrap; gap:8px; }
+  .tag-mini{
+    font-family: var(--font-mono); font-size:.72rem; color: var(--muted);
+    border:1px dashed rgba(148,163,184,.25); border-radius:6px; padding: 4px 10px;
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section{ padding: 64px 0; }
+  .section-head{ display:flex; align-items:center; gap:16px; margin-bottom: 36px; }
+  .section-head .index{ font-family: var(--font-mono); color: var(--accent); font-size:.9rem; }
+  h2{
+    font-family: var(--font-head); font-size: clamp(1.5rem, 3.5vw, 2rem);
+    font-weight:700; letter-spacing:-.01em;
+  }
+  .section-head .line{ flex:1; height:1px; background: var(--border); }
+
+  /* ---------- TIMELINE ---------- */
+  .timeline{ position:relative; padding-left: 34px; }
+  .timeline::before{
+    content:""; position:absolute; left:8px; top:6px; bottom:6px; width:2px;
+    background: linear-gradient(180deg, var(--accent), var(--accent-2), var(--accent-3), transparent);
+    border-radius:2px;
+  }
+  .xp{ position:relative; margin-bottom: 34px; }
+  .xp::before{
+    content:""; position:absolute; left:-32px; top:26px;
+    width:14px; height:14px; border-radius:50%;
+    background: var(--bg); border:3px solid var(--accent-2);
+    box-shadow: 0 0 14px rgba(129,140,248,.55);
+  }
+  .xp-card{
+    background: var(--card); border:1px solid var(--border);
+    border-radius: var(--radius); padding: 26px 28px;
+    transition: transform .25s, border-color .25s, background .25s;
+  }
+  .xp-card:hover{ transform: translateX(6px); border-color: rgba(129,140,248,.4); background: var(--card-hover); }
+  .xp-top{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; align-items:baseline; }
+  .xp-role{ font-family: var(--font-head); font-size:1.15rem; font-weight:600; }
+  .xp-date{
+    font-family: var(--font-mono); font-size:.78rem; color: var(--accent);
+    background: rgba(34,211,238,.08); border:1px solid rgba(34,211,238,.25);
+    padding: 4px 12px; border-radius: 99px; white-space:nowrap;
+  }
+  .xp-company{ color: var(--accent-3); font-weight:600; font-size:.92rem; margin-top:2px; }
+  .xp-company .loc{ color: var(--muted); font-weight:400; }
+  .xp ul{ margin: 14px 0 0; padding-left: 20px; display:grid; gap:8px; }
+  .xp li{ color: var(--muted); font-size:.93rem; }
+  .xp li strong{ color: var(--text); font-weight:600; }
+  .xp li::marker{ color: var(--accent-2); }
+  .stack{ display:flex; flex-wrap:wrap; gap:7px; margin-top: 18px; }
+  .stack span{
+    font-family: var(--font-mono); font-size:.72rem; color:#a5b4fc;
+    background: rgba(129,140,248,.1); border:1px solid rgba(129,140,248,.25);
+    padding: 3px 10px; border-radius: 6px;
+  }
+
+  /* ---------- EDUCATION ---------- */
+  .edu-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:20px; }
+  .edu-card{
+    background: var(--card); border:1px solid var(--border);
+    border-radius: var(--radius); padding: 26px; position:relative; overflow:hidden;
+    transition: transform .25s, border-color .25s;
+  }
+  .edu-card:hover{ transform: translateY(-4px); border-color: rgba(34,211,238,.4); }
+  .edu-card::before{
+    content:""; position:absolute; top:0; left:0; right:0; height:3px; background: var(--grad);
+  }
+  .edu-card .years{ font-family:var(--font-mono); font-size:.78rem; color: var(--accent); }
+  .edu-card h3{ font-family: var(--font-head); font-size:1.1rem; margin: 8px 0 2px; }
+  .edu-card .school{ color: var(--accent-3); font-size:.9rem; font-weight:600; }
+  .edu-card p{ color: var(--muted); font-size:.9rem; margin-top: 12px; }
+
+  /* ---------- SKILLS ---------- */
+  .skills-layout{ display:grid; gap: 40px; }
+  .skill-block h3{
+    font-family: var(--font-head); font-size:1.05rem; margin-bottom:16px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .skill-block h3 .chip-ico{
+    width:28px; height:28px; border-radius:8px; display:grid; place-items:center;
+    background: rgba(34,211,238,.1); border:1px solid rgba(34,211,238,.3); font-size:.85rem;
+  }
+  .func-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:16px; }
+  .func-card{
+    background: var(--card); border:1px solid var(--border); border-radius: 12px;
+    padding: 18px 20px; transition: border-color .2s;
+  }
+  .func-card:hover{ border-color: rgba(192,132,252,.4); }
+  .func-card h4{ font-family:var(--font-head); font-size:.95rem; color: var(--accent-3); margin-bottom:8px; }
+  .func-card p{ color: var(--muted); font-size:.83rem; }
+
+  .tech-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:16px; }
+  .tech-card{
+    background: var(--card); border:1px solid var(--border); border-radius:12px; padding: 18px 20px;
+  }
+  .tech-card h4{
+    font-family: var(--font-mono); font-size:.8rem; color: var(--accent);
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:12px;
+  }
+  .chips{ display:flex; flex-wrap:wrap; gap:7px; }
+  .chips span{
+    font-size:.78rem; color: var(--text); background: rgba(148,163,184,.08);
+    border:1px solid var(--border); padding: 4px 11px; border-radius:99px;
+    transition: border-color .2s, color .2s;
+  }
+  .chips span:hover{ border-color: var(--accent); color: var(--accent); }
+
+  /* ---------- CERTS & LANGUES ---------- */
+  .dual{ display:grid; grid-template-columns: 1.4fr 1fr; gap: 40px; }
+  @media (max-width: 820px){ .dual{ grid-template-columns:1fr; } }
+  .cert-list{ display:grid; gap:12px; }
+  .cert{
+    display:flex; align-items:center; gap:14px;
+    background: var(--card); border:1px solid var(--border); border-radius:12px;
+    padding: 14px 18px; transition: border-color .2s, transform .2s;
+  }
+  .cert:hover{ border-color: rgba(34,211,238,.4); transform: translateX(4px); }
+  .cert .ico{
+    width:36px; height:36px; flex-shrink:0; border-radius:10px; display:grid; place-items:center;
+    background: rgba(34,211,238,.1); border:1px solid rgba(34,211,238,.3); font-size:1rem;
+  }
+  .cert span{ font-size:.9rem; }
+
+  .lang{ margin-bottom: 20px; }
+  .lang .lang-top{ display:flex; justify-content:space-between; font-size:.9rem; margin-bottom:8px; }
+  .lang .lvl{ color: var(--muted); font-size:.8rem; font-family: var(--font-mono); }
+  .bar{ height:7px; border-radius:99px; background: rgba(148,163,184,.12); overflow:hidden; }
+  .bar i{
+    display:block; height:100%; border-radius:99px; background: var(--grad);
+    width:0; transition: width 1.2s cubic-bezier(.22,1,.36,1);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{ border-top:1px solid var(--border); padding: 44px 0 54px; text-align:center; }
+  footer .foot-name{ font-family:var(--font-head); font-weight:700; font-size:1.1rem; }
+  footer p{ color: var(--muted); font-size:.85rem; margin-top:8px; }
+  footer .foot-links{ margin-top:14px; display:flex; justify-content:center; gap:18px; flex-wrap:wrap; font-size:.85rem; }
+
+  /* ---------- REVEAL ---------- */
+  .reveal{ opacity:0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.visible{ opacity:1; transform: translateY(0); }
+
+  /* ---------- PRINT ---------- */
+  @media print{
+    :root{ --bg:#fff; --bg-soft:#fff; --card:#fff; --text:#111; --muted:#444; --border:#ddd; }
+    nav, .btn-print, .hero::after, .hero::before{ display:none !important; }
+    body{ background:#fff; color:#111; }
+    .xp-card, .edu-card, .func-card, .tech-card, .cert{ box-shadow:none; transform:none !important; }
+    h1 .grad{ -webkit-text-fill-color:#111; color:#111; }
+    section{ padding: 24px 0; }
+    .reveal{ opacity:1; transform:none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top"><span class="dot"></span>Yahya Brital</a>
+    <div class="nav-links">
+      <a href="#experiences">Expériences</a>
+      <a href="#formation">Formation</a>
+      <a href="#competences">Compétences</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+      <button class="btn-print" onclick="window.print()">⎙ Imprimer / PDF</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="container hero-content">
+    <span class="badge"><span class="pulse"></span>Disponible — Toulouse, France</span>
+    <h1>Yahya <span class="grad">Brital</span></h1>
+    <p class="role-line">Ingénieur <strong>IA & Data Science</strong> · Industrie 4.0 · MLOps · GenAI</p>
+    <p class="summary">
+      Je conçois et déploie des solutions d'intelligence artificielle qui améliorent la
+      <strong>performance opérationnelle des systèmes industriels</strong> : modèles ML en production,
+      pipelines MLOps scalables, agents GenAI et architectures Big Data temps réel.
+      Fort d'une double compétence <strong>technique</strong> (Big Data, IA, MLOps) et
+      <strong>fonctionnelle</strong> (Supply Chain, Qualité, Lean, Maintenance), je traduis les besoins
+      métiers en livrables robustes — <em>du capteur à l'algorithme, du prototype au déploiement</em>.
+    </p>
+
+    <div class="contact-row">
+      <a class="contact-chip" href="tel:+33752347174">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+        +33 7 52 34 71 74
+      </a>
+      <a class="contact-chip" href="mailto:yahyabrital2020@gmail.com">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+        yahyabrital2020@gmail.com
+      </a>
+      <a class="contact-chip" href="https://www.linkedin.com/in/yahya-brital" target="_blank" rel="noopener">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"/></svg>
+        linkedin.com/in/yahya-brital
+      </a>
+      <span class="contact-chip">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+        Toulouse, France
+      </span>
+      <!-- Visible view counter (GoatCounter) -->
+      <span class="contact-chip" id="view-chip">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        <span id="view-count">…</span>&nbsp;vues
+      </span>
+    </div>
+
+    <div class="marquee-tags">
+      <span class="tag-mini">GNN</span><span class="tag-mini">LangGraph</span><span class="tag-mini">LLM / RAG</span>
+      <span class="tag-mini">Kafka</span><span class="tag-mini">Flink</span><span class="tag-mini">Kubernetes</span>
+      <span class="tag-mini">MLflow</span><span class="tag-mini">Airflow</span><span class="tag-mini">AWS · Azure · GCP</span>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- ============ EXPÉRIENCES ============ -->
+  <section id="experiences">
+    <div class="section-head reveal">
+      <span class="index">01.</span><h2>Expériences professionnelles</h2><span class="line"></span>
+    </div>
+
+    <div class="timeline">
+      <article class="xp reveal">
+        <div class="xp-card">
+          <div class="xp-top">
+            <span class="xp-role">Consultant IA & Data / Architecte MLOps</span>
+            <span class="xp-date">Oct. 2025 – Présent</span>
+          </div>
+          <p class="xp-company">Airbus UpNext <span style="color:var(--muted);font-weight:400">(via Akkodis)</span> <span class="loc">· Toulouse, France</span></p>
+          <ul>
+            <li><strong>Prédiction de Trajectoires (Graph AI) :</strong> modélisation et prédiction des trajectoires de taxiage d'avions en aéroport via des GNN sur graphes aéroportuaires — amélioration de la fluidité du trafic sol.</li>
+            <li><strong>Data Engineering & MLOps :</strong> pipelines distribués (Dask + Apache Airflow) avec stockage Multi-Cloud (AWS S3 / Azure Blob). Orchestration MLOps via MLflow sur cluster Kubernetes.</li>
+            <li><strong>Architecture Big Data Temps Réel :</strong> pipeline haute performance (Apache Flink + Redis/Kafka) pour l'ingestion massive de flux hétérogènes (capteurs, ADS-B, radar sol).</li>
+            <li><strong>Fusion de Données Multi-Capteurs :</strong> algorithmes de track fusion (filtres probabilistes) pour fiabiliser la position des aéronefs en temps réel.</li>
+            <li><strong>Agent IA NOTAM :</strong> développement d'un agent IA pour le tagging des NOTAM à l'aide de LLM et LangGraph.</li>
+          </ul>
+          <div class="stack">
+            <span>Python</span><span>C++</span><span>ROS</span><span>GNN</span><span>LangGraph</span><span>LLM</span>
+            <span>Kafka</span><span>Redis</span><span>Airflow</span><span>MLflow</span><span>Dask</span>
+            <span>Kubernetes</span><span>AWS S3</span><span>Azure</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="xp reveal">
+        <div class="xp-card">
+          <div class="xp-top">
+            <span class="xp-role">Consultant Transformation Digitale</span>
+            <span class="xp-date">Sept. 2023 – Oct. 2025</span>
+          </div>
+          <p class="xp-company">GE Vernova <span style="color:var(--muted);font-weight:400">(via Akkodis)</span> <span class="loc">· Aix-les-Bains, France</span></p>
+          <ul>
+            <li><strong>GenAI & RAG :</strong> architecture d'un système IA (RAG, LangGraph, LLM) pour l'analyse NLP des non-conformités qualité dans le système MES.</li>
+            <li><strong>Digitalisation MES :</strong> pilotage de la transformation digitale du système MES pour la traçabilité et la centralisation des données de production.</li>
+            <li><strong>Architecture Microservices :</strong> conception d'une plateforme modulaire (Docker, Kubernetes) assurant scalabilité et résilience pour l'environnement industriel.</li>
+            <li><strong>Développement Fullstack :</strong> création d'interfaces Web (Django, Flask, Vue.js) et modélisation des données de production (PostgreSQL).</li>
+            <li><strong>Résultat :</strong> amélioration significative de la centralisation et de la traçabilité des données qualité ; socle posé pour les futurs projets Data Science.</li>
+          </ul>
+          <div class="stack">
+            <span>Python</span><span>LangGraph</span><span>RAG</span><span>LLM</span><span>Docker</span><span>Kubernetes</span>
+            <span>Django</span><span>Flask</span><span>Vue.js</span><span>PostgreSQL</span><span>MES</span><span>SAP</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="xp reveal">
+        <div class="xp-card">
+          <div class="xp-top">
+            <span class="xp-role">Ingénieur Digitalisation & Data Science <span style="color:var(--muted);font-weight:400">(Stage)</span></span>
+            <span class="xp-date">Fév. 2023 – Sept. 2023</span>
+          </div>
+          <p class="xp-company">GE Vernova <span class="loc">· Aix-les-Bains, France</span></p>
+          <ul>
+            <li><strong>Optimisation Supply Chain :</strong> algorithme génétique pour la configuration produit et la gestion des stocks (réduction des délais de production).</li>
+            <li><strong>Digitalisation :</strong> intégration du modèle d'algorithme génétique dans une interface graphique et restructuration de la base de données pour assurer la traçabilité de la production.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="xp reveal">
+        <div class="xp-card">
+          <div class="xp-top">
+            <span class="xp-role">Développeur Logiciel Embarqué <span style="color:var(--muted);font-weight:400">(Stage)</span></span>
+            <span class="xp-date">Juil. 2021 – Août 2021</span>
+          </div>
+          <p class="xp-company">ALTEN <span class="loc">· Maroc</span></p>
+          <ul>
+            <li>Développement d'une solution d'extraction de données ECU (ISO 14229) et intégration bus CAN pour le diagnostic véhiculaire (protocole UDS/CAN).</li>
+            <li>Conception GUI de visualisation et d'envoi de commandes ; participation aux rituels Agile Scrum.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ FORMATION ============ -->
+  <section id="formation">
+    <div class="section-head reveal">
+      <span class="index">02.</span><h2>Formation</h2><span class="line"></span>
+    </div>
+    <div class="edu-grid">
+      <article class="edu-card reveal">
+        <span class="years">2021 – 2023</span>
+        <h3>Diplôme d'Ingénieur Généraliste — Double Diplôme</h3>
+        <p class="school">Arts et Métiers ParisTech · Paris, France</p>
+        <p>Tableaux de bord KPI (SAP) — Maintenance militaire via Réalité Augmentée (projet Agorize).</p>
+      </article>
+      <article class="edu-card reveal">
+        <span class="years">2017 – 2023</span>
+        <h3>Diplôme d'Ingénieur Industriel</h3>
+        <p class="school">Arts et Métiers (ENSAM) · Meknès, Maroc</p>
+        <p><strong>Spécialité : IA & Data Science & Industrie 4.0</strong> — Test des systèmes ADAS (Computer Vision), Vision industrielle (contrôle qualité), Détection des tendances par NLP, Prédiction TRS/OEE.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ COMPÉTENCES ============ -->
+  <section id="competences">
+    <div class="section-head reveal">
+      <span class="index">03.</span><h2>Compétences</h2><span class="line"></span>
+    </div>
+
+    <div class="skills-layout">
+      <div class="skill-block reveal">
+        <h3><span class="chip-ico">🏭</span>Fonctionnelles — Industrie 4.0</h3>
+        <div class="func-grid">
+          <div class="func-card">
+            <h4>Supply Chain</h4>
+            <p>Gestion des stocks · Planification de la production · Optimisation logistique · ERP (SAP) · S&OP · MES · PLM · IoT Industriel</p>
+          </div>
+          <div class="func-card">
+            <h4>Lean Manufacturing</h4>
+            <p>Excellence Opérationnelle · 5S · Kaizen · VSM (Value Stream Mapping) · Kanban · SMED</p>
+          </div>
+          <div class="func-card">
+            <h4>Qualité</h4>
+            <p>Six Sigma (DMAIC) · QMS / ISO 9001 · Contrôle Qualité (Vision IA) · AMDEC · 8D · SPC · Traçabilité</p>
+          </div>
+          <div class="func-card">
+            <h4>Maintenance</h4>
+            <p>Maintenance Prédictive (ML) · GMAO / SCADA · Analyse vibratoire · TRS / OEE · Réalité Augmentée</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-block reveal">
+        <h3><span class="chip-ico">⚙️</span>Techniques</h3>
+        <div class="tech-grid">
+          <div class="tech-card">
+            <h4>IA & Data Science</h4>
+            <div class="chips"><span>GenAI / RAG / LLM</span><span>GNN</span><span>LangChain / LangGraph</span><span>PyTorch</span><span>TensorFlow</span><span>Scikit-learn</span><span>OpenCV</span><span>Transformers / Hugging Face</span><span>Time Series Analysis</span></div>
+          </div>
+          <div class="tech-card">
+            <h4>Big Data & MLOps</h4>
+            <div class="chips"><span>MLflow</span><span>Apache Airflow</span><span>Apache Kafka</span><span>Apache Flink</span><span>Apache Spark</span><span>Dask</span><span>Databricks</span><span>Redis</span><span>Feature Store</span><span>Model Registry</span><span>dbt</span></div>
+          </div>
+          <div class="tech-card">
+            <h4>Cloud & Architecture</h4>
+            <div class="chips"><span>AWS (EKS, S3, SageMaker)</span><span>Azure (Blob, ML Studio)</span><span>GCP (Vertex AI)</span><span>Docker</span><span>Kubernetes</span><span>Microservices</span><span>CI/CD (GitHub Actions)</span><span>Terraform / IaC</span></div>
+          </div>
+          <div class="tech-card">
+            <h4>Développement & APIs</h4>
+            <div class="chips"><span>Python</span><span>C / C++</span><span>ROS</span><span>Django / Flask / FastAPI</span><span>Vue.js</span><span>SQL / PostgreSQL</span><span>Git / DVC</span></div>
+          </div>
+          <div class="tech-card">
+            <h4>BI & Visualisation</h4>
+            <div class="chips"><span>Power BI</span><span>Tableau</span><span>SAP BO</span><span>Plotly / Dash</span><span>Seaborn</span><span>Matplotlib</span></div>
+          </div>
+          <div class="tech-card">
+            <h4>Gestion de Projet</h4>
+            <div class="chips"><span>Agile Scrum</span><span>Kanban</span><span>Jira</span><span>Confluence</span><span>Microsoft Project</span><span>Data Project Lifecycle</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CERTIFS + LANGUES ============ -->
+  <section id="certifications">
+    <div class="section-head reveal">
+      <span class="index">04.</span><h2>Certifications & Langues</h2><span class="line"></span>
+    </div>
+    <div class="dual">
+      <div class="cert-list reveal">
+        <div class="cert"><span class="ico">👁️</span><span>Computer Vision Basics</span></div>
+        <div class="cert"><span class="ico">🏭</span><span>Industrial IoT on Google Cloud Platform</span></div>
+        <div class="cert"><span class="ico">☁️</span><span>Getting Started with AWS Machine Learning</span></div>
+        <div class="cert"><span class="ico">📋</span><span>Project Management Foundations</span></div>
+      </div>
+      <div class="reveal" id="langues">
+        <div class="lang">
+          <div class="lang-top"><span>Arabe</span><span class="lvl">Langue maternelle</span></div>
+          <div class="bar"><i data-w="100%"></i></div>
+        </div>
+        <div class="lang">
+          <div class="lang-top"><span>Français</span><span class="lvl">Bilingue</span></div>
+          <div class="bar"><i data-w="95%"></i></div>
+        </div>
+        <div class="lang">
+          <div class="lang-top"><span>Anglais</span><span class="lvl">Courant / Bilingue</span></div>
+          <div class="bar"><i data-w="90%"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer id="contact">
+  <div class="container">
+    <p class="foot-name">Yahya Brital</p>
+    <p>Ingénieur IA & Data Science · Industrie 4.0 — « du capteur à l'algorithme, du prototype au déploiement »</p>
+    <div class="foot-links">
+      <a href="mailto:yahyabrital2020@gmail.com">yahyabrital2020@gmail.com</a>
+      <a href="tel:+33752347174">+33 7 52 34 71 74</a>
+      <a href="https://www.linkedin.com/in/yahya-brital" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ============ Scroll reveal ============ */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        e.target.querySelectorAll('.bar i').forEach(b => b.style.width = b.dataset.w);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* ============ Visible view counter (GoatCounter JSON API) ============ */
+  const GC_SITE = 'https://yahyabrital.goatcounter.com'; // ⚠️ replace
+  const gcPath  = (location.pathname === '/' ? 'index' : location.pathname.replace(/^\/|\/$/g, '')) + '.json';
+  fetch(`${GC_SITE}/counter/${gcPath}`)
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(d => {
+      const n = d.count_unique ?? d.count;
+      if (n != null) {
+        document.getElementById('view-count').textContent = n;
+        document.getElementById('view-chip').classList.add('loaded');
+      }
+    })
+    .catch(() => { /* badge stays hidden if API unavailable */ });
+</script>
+
+<!-- ============ GoatCounter tracking (invisible) ============ -->
+<script data-goatcounter="https://yahyabrital.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script> <!-- ⚠️ replace the code here too -->
+
+</body>
+</html>
